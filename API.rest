@@ -1,0 +1,12 @@
+@HOST = http://localhost:
+@PORT = 8080
+
+@SERVER = {{HOST}}{{PORT}}
+
+
+### Test the server
+
+{{SERVER}}
+
+### Get all products
+GET {{SERVER}}/api/v1/products
