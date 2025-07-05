@@ -5,8 +5,39 @@
 
 
 ### Test the server
-
 {{SERVER}}
+
 
 ### Get all products
 GET {{SERVER}}/api/v1/products
+
+
+### Get product by id
+GET {{SERVER}}/api/v1/products/1
+
+
+### Add a product
+POST {{SERVER}}/api/v1/products
+Content-Type: application/json
+
+{
+  "name": "Acer",
+  "description": "An acer laptop that has an intel i7 chip",
+  "quantity": 6,
+  "price": 19999
+
+}
+
+### Update existing product by id
+PUT {{SERVER}}/api/v1/products/2
+Content-Type: application/json
+
+{
+  "name": "Iphone 15",
+  "description": "Pre-owned iphone 15s",
+  "quantity": 6,
+  "price": 16770
+}
+
+### Delete existing product from the database
+DELETE {{SERVER}}/api/v1/products/1

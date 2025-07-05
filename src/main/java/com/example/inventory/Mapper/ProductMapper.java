@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductMapper {
 
-    public static Product productDtoToProduct(ProductDto productDto) {
+    public static Product toEntity(ProductDto productDto) {
 
         Product product = new Product ();
 
@@ -20,7 +20,7 @@ public class ProductMapper {
         return product;
     }
 
-    public static ProductDto productToProductDto(Product product) {
+    public static ProductDto toDto(Product product) {
 
         ProductDto productDto = new ProductDto();
 

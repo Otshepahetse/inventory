@@ -1,14 +1,18 @@
 package com.example.inventory.Services;
 
+import com.example.inventory.Dtos.ProductDto;
+
+import java.util.List;
+
 public interface ProductServicesInterface {
 
-    public String getProductById(int id);
+    public ProductDto getProductById(int id);
 
-    public String getAllProducts();
+    public List<ProductDto> getAllProducts();
 
-    public String addProduct();
+    public ProductDto addProduct(ProductDto productDto);
 
-    public String updateProduct();
+    public ProductDto updateProduct(ProductDto productDto, int id);
 
-    public void deleteProduct();
+    public void deleteProduct(int id);
 }
