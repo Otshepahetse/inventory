@@ -1,3 +1,5 @@
+//Variables
+
 @HOST = http://localhost:
 @PORT = 8080
 
@@ -13,7 +15,7 @@ GET {{SERVER}}/api/v1/products
 
 
 ### Get product by id
-GET {{SERVER}}/api/v1/products/1
+GET {{SERVER}}/api/v1/products/8
 
 
 ### Add a product
@@ -28,6 +30,7 @@ Content-Type: application/json
 
 }
 
+
 ### Update existing product by id
 PUT {{SERVER}}/api/v1/products/2
 Content-Type: application/json
@@ -39,5 +42,41 @@ Content-Type: application/json
   "price": 16770
 }
 
+
 ### Delete existing product from the database
 DELETE {{SERVER}}/api/v1/products/1
+
+
+//==================== Supplier Server =========================//
+
+### Get all suppliers
+GET {{SERVER}}/api/v1/suppliers
+
+### Get supplier by id
+GET {{SERVER}}/api/v1/suppliers/2
+
+
+### Add a supplier
+POST {{SERVER}}/api/v1/suppliers
+Content-Type: application/json
+
+{
+  "email": "teboho@email.com",
+  "name": "teboho",
+  "phone": "689wed44132"
+}
+
+### Update the supplier
+
+PUT {{SERVER}}/api/v1/suppliers/4
+Content-Type: application/json
+
+{
+  "email": "Tebza@gmail.com",
+  "name": "Teboho",
+  "phone": "075486458"
+}
+
+### Delete the supplier
+
+DELETE {{SERVER}}/api/v1/suppliers/2

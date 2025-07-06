@@ -1,6 +1,7 @@
 package com.example.inventory.Services.Impl;
 
 import com.example.inventory.Dtos.ProductDto;
+import com.example.inventory.Exception.DataNotFoundException;
 import com.example.inventory.Mapper.ProductMapper;
 import com.example.inventory.Modal.Product;
 import com.example.inventory.Repositories.ProductRepository;
@@ -22,7 +23,7 @@ public class ProductServicesImpl implements ProductServicesInterface {
 
     @Override
     public ProductDto getProductById(int id) {
-        Product product = productRepository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
+        Product product = productRepository.findById(id).orElseThrow(()->new DataNotFoundException("Product not found with id: " + id));
 
         return ProductMapper.toDto(product);
     }
@@ -42,7 +43,7 @@ public class ProductServicesImpl implements ProductServicesInterface {
 
     @Override
     public ProductDto updateProduct(ProductDto productDto, int id) {
-        Product product = productRepository.findById(id).orElseThrow();
+        Product product = productRepository.findById(id).orElseThrow(()->new DataNotFoundException("Product not found"));
 
         product.setName(productDto.getName());
         product.setDescription(productDto.getDescription());
@@ -54,7 +55,7 @@ public class ProductServicesImpl implements ProductServicesInterface {
 
     @Override
     public void deleteProduct(int id) {
-        Product product = productRepository.findById(id).orElseThrow();
+        Product product = productRepository.findById(id).orElseThrow(()->new DataNotFoundException("Product not found"));
         productRepository.deleteById(id);
     }
 }
